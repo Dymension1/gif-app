@@ -26,10 +26,10 @@ export const GifExpertApp = () => {
           <br />
           follow me in my social media <br />
           <a href="https://twitter.com/Luisur27">
-            <img className="twitter" src="/images/twitter-icon.svg"></img>
+            <img className="twitter" src="https://abs.twimg.com/responsive-web/client-web/icon-svg.168b89da.svg"></img>
           </a>
           <a href="https://www.instagram.com/luisur66/">
-            <img className="insta" src="/images/icons8-instagram.svg"></img>
+            <img className="insta" src="https://static.cdninstagram.com/rsrc.php/yS/r/f_5NUHW7AZC.ico"></img>
           </a>
         </p>
 
