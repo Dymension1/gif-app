@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { AddCategory, GifGrid } from "./components";
+import twitterIcon from './images/icons8-twitter.svg';
+import instagramIcon from './images/icons8-instagram.svg';
 
 export const GifExpertApp = () => {
   const [categories, setCategories] = useState([""]);
 
+  
+
   const onAddCategory = (newCategory) => {
     if (categories.includes(newCategory)) return;
-
-    //categories.push(newCategory);
     setCategories([newCategory, ...categories]);
-    //setCategories( cat => [ ...cat, 'lol' ] )
   };
 
   return (
@@ -24,12 +25,25 @@ export const GifExpertApp = () => {
         <p>
           by <strong>Luis</strong>
           <br />
-          follow me in my social media <br />
+          follow me in my social media putos
+          <br />
           <a href="https://twitter.com/Luisur27" target={"_blank"}>
-            <img className="twitter" src="https://abs.twimg.com/responsive-web/client-web/icon-svg.168b89da.svg"></img>
+            <img
+              className="twitter"
+              src={twitterIcon}
+              alt="Twitter"
+              width="30"
+              height="30"
+            />
           </a>
           <a href="https://www.instagram.com/luisur66/" target={"_blank"}>
-            <img className="insta" src="https://static.cdninstagram.com/rsrc.php/yS/r/f_5NUHW7AZC.ico"></img>
+            <img
+              className="insta"
+              src={instagramIcon}
+              alt="Instagram"
+              width="30"
+              height="30"
+            />
           </a>
         </p>
 
