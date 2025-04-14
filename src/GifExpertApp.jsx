@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { AddCategory, GifGrid } from "./components";
-import twitterIcon from './images/icons8-twitter.svg';
-import instagramIcon from './images/icons8-instagram.svg';
 
 export const GifExpertApp = () => {
 
@@ -17,7 +15,7 @@ export const GifExpertApp = () => {
   };
 
   return (
-    <>
+    <div className="page-wrapper">
       <div className="main">
         <h1>
           <a href={""}>GIPHY SEARCH</a>
@@ -25,38 +23,34 @@ export const GifExpertApp = () => {
 
         <div className="buttons">
           <AddCategory onNewCategory={(value) => onAddCategory(value)} />
-          <button onClick={clearCategories} className="clear-button" disabled={categories.length === 0}>
+          <button
+            onClick={clearCategories}
+            className="clear-button"
+            disabled={categories.length === 0}
+          >
             clear
           </button>
         </div>
-
-        <p>
-          by <strong>Luis</strong>
-          <br />
-          follow me in my social media
-          <br />
-          <a href="https://twitter.com/Luisur27" target={"_blank"}>
-            <img
-              className="twitter"
-              src={twitterIcon}
-              alt="Twitter"
-              width="30"
-              height="30"
-            />
-          </a>
-          <a href="https://www.instagram.com/luisur66/" target={"_blank"}>
-            <img
-              className="insta"
-              src={instagramIcon}
-              alt="Instagram"
-            />
-          </a>
-        </p>
 
         {categories.map((category) => (
           <GifGrid key={category} category={category} />
         ))}
       </div>
-    </>
+
+      <footer className="footer">
+        <div className="footer-content">
+          <p>
+            © 2025 Giphy Search. Todos los derechos reservados.{" "}
+            <a href="/terminos" target="_blank">
+              Términos y Condiciones
+            </a>
+          </p>
+          <p className="author">
+            by <strong className="author-name">Luis</strong>
+          </p>
+        </div>
+      </footer>
+
+    </div>
   );
 };
