@@ -4,13 +4,16 @@ import twitterIcon from './images/icons8-twitter.svg';
 import instagramIcon from './images/icons8-instagram.svg';
 
 export const GifExpertApp = () => {
-  const [categories, setCategories] = useState([""]);
 
-  
+  const [categories, setCategories] = useState([""]);
 
   const onAddCategory = (newCategory) => {
     if (categories.includes(newCategory)) return;
     setCategories([newCategory, ...categories]);
+  };
+
+  const clearCategories = () => {
+    setCategories([]);
   };
 
   return (
@@ -20,12 +23,17 @@ export const GifExpertApp = () => {
           <a href={""}>GIPHY SEARCH</a>
         </h1>
 
-        <AddCategory onNewCategory={(value) => onAddCategory(value)} />
+        <div className="buttons">
+          <AddCategory onNewCategory={(value) => onAddCategory(value)} />
+          <button onClick={clearCategories} className="clear-button" disabled={categories.length === 0}>
+            clear
+          </button>
+        </div>
 
         <p>
           by <strong>Luis</strong>
           <br />
-          follow me in my social media putos
+          follow me in my social media
           <br />
           <a href="https://twitter.com/Luisur27" target={"_blank"}>
             <img
@@ -41,8 +49,6 @@ export const GifExpertApp = () => {
               className="insta"
               src={instagramIcon}
               alt="Instagram"
-              width="30"
-              height="30"
             />
           </a>
         </p>
